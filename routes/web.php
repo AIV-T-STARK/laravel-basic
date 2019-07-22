@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'Admin',  'prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'login'], function() {
+
+        Route::get('/' , 'LoginController@getLogin')->name('admin.login.getLogin');
+        Route::post('/' , 'LoginController@postLogin')->name('admin.login.postLogin');
+
+    });
+});
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'CheckLogin'], function () {
+   Route::get('/', function () {
+       return view('admin.index');
+   });
 });
