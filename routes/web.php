@@ -24,4 +24,18 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'Chec
    Route::get('/', function () {
        return view('admin.index');
    });
+
+   Route::group(['prefix' => 'category'], function () {
+       Route::get('/', 'CategoryController@index')->name('admin.category');
+       Route::post('/', 'CategoryController@postCreateCategory')->name('admin.category.postCreate');
+
+       Route::get('/update/{id}', 'CategoryController@getUpdate')->name('admin.category.getUpdate');
+       Route::post('/update/{id}', 'CategoryController@postUpdate')->name('admin.category.postUpdate');
+
+       Route::get('/delete/{id}', 'CategoryController@destroy')->name('admin.category.destroy');
+   });
+
+
+
+
 });

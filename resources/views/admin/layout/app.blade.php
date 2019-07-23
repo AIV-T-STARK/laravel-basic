@@ -43,7 +43,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('admin.category') }}">
           <i class="fas fa-list-ul"></i>
           <span>Danh Mục</span></a>
       </li>
@@ -197,9 +197,7 @@
   <!-- Custom scripts for all pages-->
   <script src="{{ asset('asset/admin/js/sb-admin-2/sb-admin-2.min.js') }} "></script>
 
-  <!-- Page level plugins -->
-  <script src="{{ asset('asset/admin/js/datatables/jquery.dataTables.min.js') }} "></script>
-  <script src="{{ asset('asset/admin/js/datatables/dataTables.bootstrap4.min.js') }} "></script>
+
 
   @yield('script')
 
