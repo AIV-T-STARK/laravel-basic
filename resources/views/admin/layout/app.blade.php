@@ -48,7 +48,7 @@
           <span>Danh Mục</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('admin.product') }}">
           <i class="fas fa-box-open"></i>
           <span>Sản Phẩm</span></a>
       </li>
@@ -138,6 +138,8 @@
 
         </nav>
         <!-- End of Topbar -->
+
+        @include('admin.note')
 
         <!-- Begin Page Content -->
         <div class="container-fluid">

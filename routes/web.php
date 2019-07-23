@@ -35,7 +35,17 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'Chec
        Route::get('/delete/{id}', 'CategoryController@destroy')->name('admin.category.destroy');
    });
 
+    Route::group(['prefix' => 'product'], function () {
+        Route::get('/', 'ProductController@index')->name('admin.product');
 
+        Route::get('/create', 'ProductController@getCreateProduct')->name('admin.product.getCreate');
+        Route::post('/create', 'ProductController@postCreateProduct')->name('admin.product.postCreate');
+
+        Route::get('/update/{id}', 'ProductController@getUpdate')->name('admin.product.getUpdate');
+        Route::post('/update/{id}', 'ProductController@postUpdate')->name('admin.product.postUpdate');
+
+        Route::get('/delete/{id}', 'ProductController@destroy')->name('admin.product.destroy');
+});
 
 
 });

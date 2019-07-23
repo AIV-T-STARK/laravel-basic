@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->text('desc');
             $table->float('price');
             $table->float('priceSale');
-            $table->boolean('active');
+            $table->boolean('active')->default(1);
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();

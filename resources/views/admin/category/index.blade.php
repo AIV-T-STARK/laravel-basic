@@ -75,7 +75,6 @@
 @endsection
 
 @section('script')
-    <!-- Page level plugins -->
     <script src="{{ asset('asset/admin/js/datatables/jquery.dataTables.min.js') }} "></script>
     <script src="{{ asset('asset/admin/js/datatables/dataTables.bootstrap4.min.js') }} "></script>
 
