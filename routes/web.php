@@ -23,7 +23,7 @@ Route::group(['namespace' => 'Admin',  'prefix' => 'admin'], function () {
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'CheckLogin'], function () {
    Route::get('/', function () {
        return view('admin.index');
-   });
+})->name('admin');
 
    Route::group(['prefix' => 'category'], function () {
        Route::get('/', 'CategoryController@index')->name('admin.category');
