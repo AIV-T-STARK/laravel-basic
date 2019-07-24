@@ -68,7 +68,10 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
-        Category::destroy($id);
+        $category = Category::find($id);
+
+        $category->product()->delete();
+        $category->delete();
 
         return redirect()->back()->with('success', 'Đã xóa 1 danh mục');
     }

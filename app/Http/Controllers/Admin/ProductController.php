@@ -30,7 +30,7 @@ class ProductController extends Controller
     public function postCreateProduct(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:products,name',
+            'name' => 'required',
             'price' => 'required',
             'desc' => 'required',
             'image' => 'required|image',
@@ -41,8 +41,27 @@ class ProductController extends Controller
         $product = new Product();
 
         $product->name = $request->name;
-        $product->slug = Str::slug($request->name, '-');
 
+        if(Product::where('name', $request->name)->exists()) {
+            $product->slug = Str::slug($request->name, '-') . '-' . Str::random(10);
+        }
+        else {
+            $product->slug = Str::slug($request->name, '-');
+        }
+
+        $product->price = $request->price;
+
+        if($request->priceSale == null || $request->priceSale > $request->price) {
+            $product->priceSale = $request->price;
+        }else {
+            $product->priceSale = $request->priceSale;
+        }
+
+        $product->desc = $request->desc;
+
+        $product->active = 1;
+
+        $product->category_id = $request->category_id;
 
         //Upload avatar
         $image = $request->image;
@@ -53,15 +72,6 @@ class ProductController extends Controller
         $product->image = 'upload/product/' . $image_new_name;
 
         //
-
-        $product->price = $request->price;
-
-        $product->priceSale = $request->priceSale;
-
-        $product->desc = $request->desc;
-        $product->active = 1;
-
-        $product->category_id = $request->category_id;
 
         $product->save();
 
@@ -93,6 +103,28 @@ class ProductController extends Controller
 
         $product = Product::find($id);
 
+        $product->name = $request->name;
+
+        if(Product::where('name', $request->name)->exists()) {
+            $product->slug = Str::slug($request->name, '-') . '-' . Str::random(10);
+        }
+        else {
+            $product->slug = Str::slug($request->name, '-');
+        }
+
+        $product->price = $request->price;
+
+        if($request->priceSale == null || $request->priceSale > $request->price) {
+            $product->priceSale = $request->price;
+        }
+        else {
+            $product->priceSale = $request->priceSale;
+        }
+
+        $product->desc = $request->desc;
+
+        $product->category_id = $request->category_id;
+
         if($request->hasFile('image')) {
             $image = $request->image;
 
@@ -103,17 +135,6 @@ class ProductController extends Controller
             unlink($product->image);
             $product->image = 'uploads/products/' . $image_new_name;
         }
-
-        $product->name = $request->name;
-        $product->slug = Str::slug($request->name, '-');
-
-        $product->price = $request->price;
-
-        $product->priceSale = $request->priceSale;
-
-        $product->desc = $request->desc;
-
-        $product->category_id = $request->category_id;
 
         $product->save();
 

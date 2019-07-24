@@ -54,9 +54,7 @@
                   </div>
                   <div class="form-group">
                     <label for="desc">Mô tả</label>
-                    <textarea class="form-control" name="desc" id="desc" rows="7">
-                    	{{ $product->desc }}
-                    </textarea>
+                    <textarea class="form-control" name="desc" id="desc" rows="7">{{ $product->desc }}</textarea>
                   </div>
                   <div class="form-group text-right">
                     <button type="submit" class="btn btn-primary">Lưu</button>
@@ -72,6 +70,7 @@
 @endsection
 
 @section('script')
+
   <script>
   	function readURL(input) {
         if (input.files && input.files[0]) {
