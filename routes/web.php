@@ -45,7 +45,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'chec
         Route::post('/update/{id}', 'ProductController@postUpdate')->name('admin.product.postUpdate');
 
         Route::get('/delete/{id}', 'ProductController@destroy')->name('admin.product.destroy');
+    });
+
+
 });
 
-
+Route::get('/', function () {
+    return view('user.product');
 });

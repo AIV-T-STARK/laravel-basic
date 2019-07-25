@@ -1,0 +1,197 @@
+.width-100 {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: $white !important;
+}
+
+.text-gray-3 {
+  color: $gray-3 !important;
+}
+
+@each $key, $val in $theme-colors {
+  .text-#{$key} {
+    color: $val !important;
+  }
+}
+
+.bg-black {
+  background-color: $gray-6;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-red {
+  background-color: $red;
+}
+
+@each $key, $val in $theme-colors {
+  .bg-#{$key} {
+    background-color: $val;
+  }
+}
+
+.text-bold {
+  font-weight: 700 !important;
+}
+
+.text-thin {
+  font-weight: 400 !important;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.box-shadow {
+  @include boxShadow();
+}
+
+.d-flex {
+  display: flex;
+  height: 100%;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+@each $key, $val in $sizes {
+  .p-#{$key} {
+    padding: $val !important;
+  }
+  .py-#{$key} {
+    padding-top: $val !important;
+    padding-bottom: $val !important;
+  }
+  .px-#{$key} {
+    padding-left: $val !important;
+    padding-right: $val !important;
+  }
+}
+
+@each $key, $val in $sizes {
+  .m-#{$key} {
+    margin: $val !important;
+  }
+
+  .mt-#{$key} {
+    margin-top: $val !important;
+  }
+
+  .mb-#{$key} {
+    margin-bottom: $val !important;
+  }
+
+  .mr-#{$key} {
+    margin-right: $val !important;
+  }
+
+  .ml-#{$key} {
+    margin-left: $val !important;
+  }
+}
+
+.img-responsive {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 0.75rem;
+  font-size: 16px;
+  border: 1px solid $border-input;
+  border-radius: 0.25rem;
+  background-color: $white;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+@include mediaSm {
+  .d-sm-none {
+    display: none;
+  }
+  
+  .d-sm-block {
+    display: block;
+  }
+}
+
+@include mediaMd {
+  .d-md-none {
+    display: none;
+  }
+  
+  .d-md-block {
+    display: block;
+  }
+}
+
+@include mediaLg {
+  .d-lg-none {
+    display: none;
+  }
+  
+  .d-lg-block {
+    display: block;
+  }
+}
+
+.display-24px {
+  font-size: 24px;
+}
+
+.display-1 {
+  font-size: 3rem;
+}
+
+.display-2 {
+  font-size: 2rem;
+}
+
+.display-3 {
+  font-size: 1.3rem;
+}
+
+@include mediaXl {
+  .display-1 {
+    font-size: 4rem;
+  }
+  
+  .display-2 {
+    font-size: 2.5rem;
+  }
+  
+  .display-3 {
+    font-size: 1.5rem;
+  }
+}

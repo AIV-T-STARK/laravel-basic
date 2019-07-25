@@ -1,0 +1,144 @@
+#news-letters {
+  .card-desc {
+    text-align: left;
+  }
+
+  input {
+    background: $bg-input;
+    margin-top: 20px;
+    border: none;
+  }
+
+  .btn {
+    margin-top: 23px;
+  }
+}
+
+#featured-products {
+  .card-desc {
+    margin-top: 24px;
+    padding-left: 7px;
+    text-align: left;
+  }
+
+  img {
+    max-height: 96px;
+  }
+}
+
+@include mediaSm {
+  #new-products .product img, #latest-products .product img {
+    height: 165px;
+  }
+}
+
+@include mediaMd {
+  #new-products .product img, #latest-products .product img {
+    height: 200px;
+  }
+}
+
+#banner-sale {
+  .banner-sale-img {
+    @include bg-default();
+  }
+
+  .banner-sale-imgg {
+    border-top: 246px solid transparent;
+    border-right: 60px solid $white;
+  }
+
+  .banner-sale:first-child {
+    margin-bottom: 34px;
+
+    @include mediaMd {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.banner-sale-desc {
+  text-align: right;
+  padding-top: 40px;
+  padding-right: 25px;
+  line-height: 1.2;
+
+  h1 {
+    font-weight: 900;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  a {
+    display: inline-block;
+    color: $light-blue;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 2px;
+    margin-bottom: 14px;
+    border-bottom: $light-blue solid 2px;
+  }
+
+  p.text-dark {
+    font-size: 12px;
+  }
+}
+
+.mid-banner-content {
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 1.2;
+
+  @include mediaMd {
+    text-align: left;
+  }
+
+  .btn {
+    margin-top: 25px;
+  }
+
+  .text-blue {
+    color: $light-blue !important;
+  }
+}
+
+.owl-nav {
+  position: absolute;
+  top: -40px;
+  right: 4px;
+}
+
+.owl-nav button {
+  margin-left: 3px;
+}
+
+.owl-nav button i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 50%;
+  color: #fff;
+  background: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.owl-nav button.owl-prev i {
+  padding-top: 1px;
+  padding-right: 2px;
+}
+
+.owl-nav button.owl-next i {
+  padding-top: 1px;
+  padding-left: 2px;
+}

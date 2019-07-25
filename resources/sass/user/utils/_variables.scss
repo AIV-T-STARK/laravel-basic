@@ -1,0 +1,73 @@
+$red:        #f10e34;
+$light-red:  #f22f49;
+$blue:       #303a7a;
+$light-blue: #0f8ce9;
+$yellow:     #ffc808;
+$green:      #28a745;
+
+//
+$white:  #fff;
+$gray-1: #f3f3f3;
+$gray-2: #ddd;
+$gray-3: #b6b6b6;
+$gray-4: #3d3d3d;
+$gray-5: #212121;
+$gray-6: #1f1d1d;
+$black:  #000;
+
+
+//
+$primary:       $light-red;
+$secondary:     $gray-3;
+$success:       $green;
+$info:          $blue;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-1;
+$dark:          $gray-4;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+
+//
+$body-background: $gray-1;
+$bg-input:        $gray-1;
+$border-input:    darken($bg-input, 10%);
+
+
+
+//15px
+$size-1: 0.5rem;//7.5px
+$size-2: 0.75rem;//11.25px
+$size-3: 1rem;//15px
+$size-4: 1.25rem;//18.75px
+$size-5: 1.5rem;//22.5px
+$size-6: 2rem;//30px
+$size-7: 2.25rem;//33.75px
+$size-8: 2.5rem;//37.5
+
+$sizes: (
+  "1": $size-1,
+  "2": $size-2,
+  "3": $size-3,
+  "4": $size-4,
+  "5": $size-5,
+  "6": $size-6,
+  "7": $size-7,
+  "8": $size-8
+);
+
+
+//
+$padding_card-body: 23px;
+$padding_card-products: 10px;
+$columns: 12;

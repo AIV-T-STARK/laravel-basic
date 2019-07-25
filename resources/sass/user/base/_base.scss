@@ -1,0 +1,50 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+html, body {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  background: $body-background;
+  color: $gray-4;
+}
+
+p {
+  font-size: 15px;
+}
+
+img {
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+input, textarea, select { 
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}

@@ -1,0 +1,72 @@
+@mixin mediaSm {
+  @media screen and (min-width:576px) {
+   @content; 
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (min-width:768px) {
+   @content; 
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 992px) {
+   @content; 
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 1120px) {
+   @content; 
+  }
+}
+
+@mixin boxShadow {
+  box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.06);
+}
+
+@mixin bg-default {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin list-item-hover($bg-color, $font-color) {
+  background-color: $bg-color;
+  color: $font-color;
+}
+
+@mixin col-right {
+  flex: 0 0 73%;
+  max-width: 73%;
+}
+
+@mixin col-left {
+  flex: 0 0 27%;
+  max-width: 27%;
+}
+
+@mixin make-btn($color) {
+  color: $white;
+  background: $color;
+  border-color: $color;
+
+  &:hover {
+    color: $color;
+    background: transparent;
+    border-color: $color;
+  }
+}
+
+@mixin make-btn-outline($color) {
+  color: $color;
+  background: transparent;
+  border-color: $color;
+
+  &:hover {
+    //nếu mầu truyền vào là màu trắng thì bị lỗi
+    color: #fff;
+    background: $color;
+  }
+}

@@ -1,0 +1,136 @@
+
+
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+
+  &.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > [class*="col-"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.big-gutters {
+    margin-right: -20px;
+    margin-left: -20px;
+
+    > [class*="col-"] {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &.small-gutters {
+    margin-right: -5px;
+    margin-left: -5px;
+
+    > [class*="col-"] {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+}
+
+
+%grid-column {
+  position: relative;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+@for $i from 1 through $columns {
+  .col-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i} {
+    @extend %grid-column;
+  }
+}
+
+.col-left, .col-sm-left, .col-md-left, .col-lg-left,
+.col-right, .col-sm-right, .col-md-right, .col-lg-right {
+  @extend %grid-column;
+}
+
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    flex: 0 0 ($i/$columns)*100%;
+    max-width: ($i/$columns)*100%;
+  }
+}
+
+.col-left {
+  @include col-left();
+}
+
+.col-right {
+  @include col-right();
+}
+
+@include mediaSm {
+  @for $i from 1 through $columns {
+    .col-sm-#{$i} {
+      flex: 0 0 ($i/$columns)*100%;
+      max-width: ($i/$columns)*100%;
+    }
+  }
+  
+  .col-sm-left {
+    @include col-left();
+  }
+  
+  .col-sm-right {
+    @include col-right();
+  }
+}
+
+@include mediaMd {
+  @for $i from 1 through $columns {
+    .col-md-#{$i} {
+      flex: 0 0 ($i/$columns)*100%;
+      max-width: ($i/$columns)*100%;
+    }
+  }
+  
+  .col-md-left {
+    @include col-left();
+  }
+  
+  .col-md-right {
+    @include col-right();
+  }
+}
+
+@include mediaLg {
+  @for $i from 1 through $columns {
+    .col-lg-#{$i} {
+      flex: 0 0 ($i/$columns)*100%;
+      max-width: ($i/$columns)*100%;
+    }
+  }
+  
+  .col-lg-left {
+    @include col-left();
+  }
+  
+  .col-lg-right {
+    @include col-right();
+  }
+}

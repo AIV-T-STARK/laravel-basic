@@ -1,0 +1,22 @@
+.btn {
+  display: inline-block;
+  padding: 8px 22px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+@each $key, $val in $theme-colors {
+  .btn-#{$key} {
+    @include make-btn($val);
+  }
+
+  .btn-outline-#{$key} {
+    @include make-btn-outline($val);
+  }
+}
