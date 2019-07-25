@@ -177,15 +177,15 @@
               </div>
               <div class="card-products">
                 <div class="card-products owl-carousel slide-product-2">
-                  @for($i = 0; $i < 7; $i++)
+                  @foreach($products as $product)
                     <div class="product">
-                      <a href="#">
+                      <a href="{{ route('user.getProduct', ['slug' => $product->slug]) }}">
                         <div class="card-img">
-                          <img src="https://picsum.photos/200/300" alt="product1" class="img-responsive">
+                          <img src="{{ url($product->image) }}" alt="{{ $product->name }}" class="img-responsive">
                         </div>
                         <div class="card-desc">
-                          <p>Lorem, ipsum dolorrrrrrr.</p>
-                          <p><span class="price-die">$188.8</span><span class="price">$99.9</span></p>
+                          <p>{{ $product->name }}</p>
+                          <p><span class="price-die">${{ $product->price }}</span><span class="price">${{ $product->priceSale }}</span></p>
                           <p>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -196,7 +196,7 @@
                         </div>
                       </a>
                     </div>
-                  @endfor
+                  @endforeach
                 </div>
               </div>
             </div>
@@ -251,34 +251,14 @@
                   Latest products
                 </p>
                 <ul class="card-menu">
-                  <li><a href="#">all</a></li>
-                  <li><a href="#">Clothing</a></li>
-                  <li><a href="#">Electronics</a></li>
-                  <li><a href="#">Copy</a></li>
+                  @foreach($categories as $cate)
+                    <li><a href="{{ route('user.getProductOfCategory', ['slug' => $cate->slug]) }}">{{$cate->name}}</a></li>
+                    @endforeach
                 </ul>
               </div>
               <div class="card-products">
                 <div class="card-products owl-carousel slide-product-2">
-                  @for($i = 0; $i < 7; $i++)
-                    <div class="product">
-                      <a href="#">
-                        <div class="card-img">
-                          <img src="https://picsum.photos/200/300" alt="product1" class="img-responsive">
-                        </div>
-                        <div class="card-desc">
-                          <p>Lorem, ipsum dolorrrrrrr.</p>
-                          <p><span class="price-die">$188.8</span><span class="price">$99.9</span></p>
-                          <p>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  @endfor
+                  {{--////////--}}
                 </div>
               </div>
             </div>

@@ -50,6 +50,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'chec
 
 });
 
-Route::get('/', function () {
-    return view('user.product');
+Route::group(['namespace' => 'User'], function () {
+    Route::get('/', 'UserController@index')->name('user');
+
+    Route::get('/{slug}.html', 'UserController@getProduct')->name('user.getProduct');
+    Route::get('/category/{slug}', 'UserController@getProductOfCategory')->name('user.getProductOfCategory');
+
 });
